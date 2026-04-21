@@ -1,0 +1,60 @@
+Build a real estate apartment listing website that runs locally on my laptop/private machine. Here are the full requirements:
+
+--- TECH STACK ---
+- Frontend: plain HTML, CSS, and JavaScript (no frameworks)
+- Backend: Node.js with Express
+- Database: MySQL (running locally)
+- The app should run on http://localhost:3000
+
+--- DATABASE ---
+Create a MySQL database called "realestate_db" with a table called "apartments" containing these columns:
+  id (INT, auto-increment, primary key)
+  title (VARCHAR)
+  bhk (INT — number of bedrooms, e.g. 1, 2, 3, 4)
+  rent_price (DECIMAL — monthly rent in INR)
+  sale_price (DECIMAL — sale price in INR, nullable)
+  locality (VARCHAR)
+  city (VARCHAR)
+  area_sqft (INT)
+  floor_number (INT)
+  total_floors (INT)
+  furnished_status (ENUM: 'furnished', 'semi-furnished', 'unfurnished')
+  available_from (DATE)
+  description (TEXT)
+  contact_name (VARCHAR)
+  contact_phone (VARCHAR)
+  created_at (TIMESTAMP, default CURRENT_TIMESTAMP)
+
+Also provide:
+  - SQL script to create the database and table
+  - SQL script to insert at least 12 sample listings covering 1BHK, 2BHK, 3BHK, and 4BHK across different price ranges
+
+--- BACKEND API ---
+Build a REST API with these endpoints:
+  GET  /api/apartments        — list all apartments (supports query params for bhk, city, min_price, max_price)
+  GET  /api/apartments/:id    — get single apartment details
+  POST /api/apartments        — add a new listing
+  PUT  /api/apartments/:id    — update a listing
+  DELETE /api/apartments/:id  — delete a listing
+
+--- FRONTEND ---
+Build a clean, modern apartment listing website with:
+  1. A homepage showing all apartment cards in a grid layout
+  2. Each card shows: BHK type, title, locality, price, area (sqft), furnished status, and a "View Details" button
+  3. A detail page/modal showing all apartment information
+  4. A clear badge or tag showing the BHK type (1BHK, 2BHK etc.) prominently on each card
+
+--- EXTRA FEATURES ---
+   1. Filter by BHK (1BHK, 2BHK, 3BHK, 4BHK+)
+   2. Price range filter (min/max slider)
+   3. Search by locality or city
+
+--- LOCAL SETUP ---
+Provide a complete step-by-step guide to:
+  1. Set up MySQL locally and create the database
+  2. Install all dependencies
+  3. Configure the database connection (host: localhost, port: 3306)
+  4. Start the backend server on port 3000
+  5. Open the website in a browser at http://localhost:3000
+
+Make the code production-quality with proper error handling, environment variables (.env file) for DB credentials, and clear folder structure. Include a README.md with setup instructions.
