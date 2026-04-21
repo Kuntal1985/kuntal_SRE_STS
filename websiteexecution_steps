@@ -1,0 +1,15 @@
+Quick Start (5 steps)
+1. Import the database
+bashmysql -u root -p < database.sql
+2. Set your credentials
+bashcp .env.example .env
+# Edit .env and set DB_PASSWORD=your_mysql_password
+3. Install dependencies
+bashnpm install
+4. Start the server
+bashnpm start
+5. Open browser → http://localhost:3000
+
+What's inside the zip
+FilePurposeserver.jsExpress app, serves API + static filesconfig/db.jsMySQL connection poolroutes/apartments.jsAll 5 REST API endpoints with filteringpublic/index.htmlFull frontend UIpublic/css/style.cssEditorial luxury theme (Playfair Display font)public/js/app.jsAll frontend logic — fetch, filter, modal, toastdatabase.sqlSchema + 13 
+sample listings across 3 cities.env.exampleTemplate for your DB credentialsREADME.mdFull setup guide with troubleshooting
